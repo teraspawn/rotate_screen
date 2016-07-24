@@ -8,19 +8,23 @@ inverted=`xrandr --verbose | sed -n 2p| grep -o inverted | wc -w`
 if [[ "$normal" -eq 2 ]]
 	then
 		xrandr -o 1
+		xinput set-prop 12 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
 fi
 
 if [[ "$left" -eq 2 ]]
 	then
 		xrandr -o 2
+		xinput set-prop 12 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
 fi
 
 if [[ "$inverted" -eq 2 ]]
 	then
 		xrandr -o 3
+		xinput set-prop 12 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
 fi
 
 if [[ "$right" -eq 2 ]]
 	then
 		xrandr -o 0
+		xinput set-prop 12 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1
 fi
