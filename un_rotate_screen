@@ -7,24 +7,24 @@ inverted=`xrandr --verbose | sed -n 2p| grep -o inverted | wc -w`
 
 if [[ "$normal" -eq 2 ]]
 	then
-		xrandr -o 1
-		xsetwacom --set 12 rotate ccw
-fi
-
-if [[ "$left" -eq 2 ]]
-	then
-		xrandr -o 2
-		xsetwacom --set 12 rotate half
-fi
-
-if [[ "$inverted" -eq 2 ]]
-	then
 		xrandr -o 3
 		xsetwacom --set 12 rotate cw
 fi
 
-if [[ "$right" -eq 2 ]]
+if [[ "$left" -eq 2 ]]
 	then
 		xrandr -o 0
 		xsetwacom --set 12 rotate none
+fi
+
+if [[ "$inverted" -eq 2 ]]
+	then
+		xrandr -o 1
+		xsetwacom --set 12 rotate ccw
+fi
+
+if [[ "$right" -eq 2 ]]
+	then
+		xrandr -o 2
+		xsetwacom --set 12 rotate half
 fi
