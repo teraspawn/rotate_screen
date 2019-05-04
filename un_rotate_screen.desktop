@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_GB]=redo
+Exec=un_rotate_screen
+Name[en_GB]=Unrotate Screen
+Name=Unrotate Screen
+Icon=redo
